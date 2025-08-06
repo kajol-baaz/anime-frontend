@@ -2,22 +2,18 @@ console.log("searchAnime() triggered");
 
 async function searchAnime() {
   const animeName = document.getElementById("animeinput").value;
-  const result = await fetch(`/search?anime=${encodeURIComponent(animeName)}`);
+
+  // ✅ Use full backend URL to avoid local path issues
+  const result = await fetch(`https://anime-backend-02wn.onrender.com/search?anime=${encodeURIComponent(animeName)}`);
   const data = await result.json();
   const anime = data.results[0];
-  fetch("https://anime-backend-02wn.onrender.com")
-    .then(res => res.json())
-    .then(data => {
-      console.log(data); // Or show in HTML
-      alert("Found: " + data.results[0].title);
-    })
-    .catch(err => console.error("API error:", err));
 
   if (!anime) {
     document.getElementById("results").innerText = "Anime not found.";
     return;
   }
 
+  // ✨ Build anime info HTML
   document.getElementById("results").innerHTML = `
     <div class="js-div">
       <h2 class="js-heading">${anime.title}</h2>
@@ -34,13 +30,12 @@ async function searchAnime() {
     </div>
   `;
 
+  // 🧠 Get recommendations
   const animeId = anime.mal_id;
-
-  // Fetch recommendations
-  const recRes = await fetch(`/recommendations?animeId=${animeId}`);
+  const recRes = await fetch(`https://anime-backend-02wn.onrender.com/recommendations?animeId=${animeId}`);
   const recData = await recRes.json();
-  let recHTML = "<ul class=r-section>";
 
+  let recHTML = "<ul class='r-section'>";
   recData.recommendations.forEach(rec => {
     recHTML += `
       <li class="js-list">
@@ -50,8 +45,6 @@ async function searchAnime() {
       </li>
     `;
   });
-
   recHTML += "</ul>";
   document.getElementById("results").innerHTML += recHTML;
 }
-
