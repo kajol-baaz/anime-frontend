@@ -131,6 +131,7 @@ button:hover{
     top: 0%;
     border-radius: 10px;
     margin: 2%;
+    color: #90e0ef;
     box-shadow: 0 4px 8px #03045e;
     background: linear-gradient(135deg,#03045e 10%, #0096c7 110%, #03045e 99%, #03045e 99%, #0096c7 110%, #03045e 10% );
 }
@@ -549,5 +550,6 @@ strong{
     margin-top: 5%;
     word-break: break-word;
     }
+
 
 }
