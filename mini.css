@@ -7,6 +7,7 @@ body{
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    color: #90e0ef;
     overflow-x: hidden;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -553,3 +554,4 @@ strong{
 
 
 }
+
