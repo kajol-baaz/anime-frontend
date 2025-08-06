@@ -1,0 +1,553 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(135deg, #03045e 0%,#023e8a 45%,#03045e 0%,#023e8a 45%);
+    
+}
+
+/*nav{
+    background: linear-gradient(135deg, #023e8a 0,#03045e 105%,#023e8a 0,#03045e 105%, #023e8a 0%);
+}
+.navbar-nav .nav-item {
+    color: #caf0f8;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-item:hover {
+    color:#0077b6;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.brand{
+    color: #caf0f8;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 30px;
+}*/
+/*@font-face {
+    font-family: 'TakeshiSword';
+    src: url('https://example.com/fonts/TakeshiSword.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'TakeshiSword';
+    padding: 5px;
+}
+h1 {
+    font-weight: bold;
+    color: #caf0f8;
+    font-size: 4rem;
+    margin: 0;
+}
+
+.para{
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #90e0ef;
+    word-break: break-all;
+    overflow: hidden;  
+    white-space: nowrap;           /* Keep text on one line */
+    animation: typing 2.5s steps(40, end);
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+#text-show{
+    overflow: hidden;
+    
+}
+.form-control{
+    width: 90%;
+    font-size: larger;
+}
+button{
+    background: linear-gradient(135deg, #03045e 20%, #023e8a 98%, #03045e 70%, #90e0ef 60%, #03045e 70%, #023e8a 98%, #90e0ef 70%, #023e8a 80%, #03045e 20%);
+    color: #90e0ef;
+    box-shadow: 0 4px 4px #03045e;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 1.9%;
+    width: 50%;
+    border-radius: 10px ;
+    border: none;
+    margin-top: 2%;
+    transition: color 0.3s ease-in-out;
+}
+button:hover{
+    background: #ade8f4;
+    color: #023e8a;
+}
+.resultwrap{
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    height: auto;
+    width: auto;
+}
+#results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70vw;
+    height: auto;
+    padding: 1.5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    border: solid 1px #03045e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+.js-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;  
+    align-items: center;
+    height: 60vw;
+    width: 60vw;
+    position: relative;
+    top: 0%;
+    border-radius: 10px;
+    margin: 2%;
+    box-shadow: 0 4px 8px #03045e;
+    background: linear-gradient(135deg,#03045e 10%, #0096c7 110%, #03045e 99%, #03045e 99%, #0096c7 110%, #03045e 10% );
+}
+.js-heading{
+    font-size: 2.5vw;
+    word-break: break-word;
+    margin-left: 3%;
+    padding: 1%;
+    font-weight: bold;
+    color: #caf0f8;
+    font-family: takeshisword;
+}
+a{
+    color: #03045e;
+}
+.js-img{
+    border: solid 1px #ade8f4;
+    border-radius: 10px;
+    margin-left: 3%;
+}
+.js-img:hover{
+    transition: 3s ease;
+    transform: rotate3d(360deg);
+    cursor: pointer;
+}
+.js-ep-detail{
+    width: 88ch;
+    padding: 2%;
+    font-size: 1.2vw;
+    text-align: start;
+    position: absolute;
+    bottom: 0;
+    word-break: break-word;
+}
+.js-ep{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
+.js-sco{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+.js-status{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+}
+.js-air{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 55%;
+    left: 5%;
+}
+.js-type{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+.js-gen{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 45%;
+    right: 5%;
+}
+.js-rating{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+.js-url{
+    font-size: 1.0rem;
+    word-break: break-word;
+    position: absolute;
+    top: 55%;
+    right: 5%;
+}
+.r-section{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.js-list{
+    margin-top: 10%;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+img{
+    border-radius: 10px;
+    border: solid 1px #90e0ef;
+}
+img:hover{
+    transition: 3s ease;
+    transform: rotateY(360deg);
+    cursor: pointer;
+}
+strong{
+    color: #90e0ef;
+    
+}
+.r-link{
+    color: #03045e;
+    font-size: 1rem;
+    margin-left: 5%;
+    margin-top: 5%;
+    word-break: break-word;
+}
+.btn{
+    
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+    margin: 5px;
+    font-size: medium;
+    font-weight: bold;
+    background: #000;
+    color: #0096c7;
+    width: 7.5rem;
+    word-break: break-word;
+}
+.btn:hover{
+    background: #caf0f8;
+    color: #03045e;
+}
+@media(max-width:1000px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow-x: hidden;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+    p{
+        width: 60vw;
+        text-align: center;
+    }
+    .resultwrap{
+    position: absolute;
+    top: 50%;
+    margin-top: 20%;
+    height: auto;
+    width: 90vw;
+    }
+    #results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    width: 70vw;
+    }
+    .js-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    top: 0;
+    height: 80vh;
+    width: 60vw;
+    }
+    .js-img{
+    width: 80px;
+    border: solid 1px #ade8f4;
+    border-radius: 10px;
+    margin-left: 3% ;
+    }
+    .js-img:hover{
+    transition: 2s ease;
+    transform: rotateY(360deg);
+    cursor: pointer;
+}
+    .js-ep-detail{
+    width: 55vw;
+    padding: 2%;
+    font-size: 1.2vw;
+    text-align: start;
+    position: absolute;
+    top: 65%;
+    margin-bottom: 10%;
+    word-break: break-word;
+    }
+    .js-ep{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 38%;
+    left: 0;
+    }
+    .js-type{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 43%;
+    right: 0%;
+    }
+    .js-sco{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 47%;
+    left: 0;
+    }
+    .js-status{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    }
+    .js-air{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 54%;
+    left: 2%;
+    }
+    .js-rating{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 58%;
+    left: 2%;
+    }
+    .js-gen{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 61%;
+    left: 1.9%;
+    }   
+    .js-url{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 64%;
+    left: 2%;
+    }
+    .r-section{
+    display: flex;     
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    }
+    .js-list{
+    margin-top: 10%;
+    font-size: 1rem;
+    word-wrap: break-word;
+    }
+    img{
+    width: 70px;
+    border-radius: 10px;
+    border: solid 1px #90e0ef;
+    }
+    img:hover{
+    transition: 2s ease;
+    transform: rotateY(360deg);
+    cursor: pointer;
+    }
+    strong{
+    color: #90e0ef;
+    word-break: break-word;
+    font-size: medium;
+    
+    }
+    .r-link{
+    color: #caf0f8;
+    font-size: 1.0rem;
+    margin-left: 5%;
+    margin-top: 5%;
+    word-break: break-word;
+    }
+
+}
+@media (max-width: 450px){
+     .resultwrap{
+    position: absolute;
+    top: 50%;
+    margin-top: 20%;
+    height: 100vh;
+    width: 90vw;
+    }
+    #results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    width: 70vw;
+    }
+    .js-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    top: 0;
+    height: 35vh;
+    width: 60vw;
+    }
+    .js-img{
+    width: 80px;
+    border: solid 1px #ade8f4;
+    border-radius: 10px;
+    margin-left: 3% ;
+    }
+    .js-ep-detail{
+    width: 60vw;
+    padding: 2%;
+    font-size: 1.2vw;
+    text-align: start;
+    position: absolute;
+    margin-top: 10%;
+    bottom: 0;
+    word-break: break-word;
+    }
+    .js-ep{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 38%;
+    left: 0;
+    }
+    .js-type{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 43%;
+    right: 0%;
+    }
+    .js-sco{
+    word-break: break-word;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 47%;
+    left: 0;
+    }
+    .js-status{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    }
+    .js-air{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 54%;
+    left: 2%;
+    }
+    .js-rating{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 58%;
+    left: 2%;
+    }
+    .js-gen{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 61%;
+    left: 1.9%;
+    }   
+    .js-url{
+    font-size: 1.2vw;
+    word-break: break-word;
+    position: absolute;
+    top: 64%;
+    left: 2%;
+    }
+    .r-section{
+    display: flex;     
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    }
+    .js-list{
+    margin-top: 10%;
+    font-size: 1rem;
+    word-wrap: break-word;
+    }
+    img{
+    width: 70px;
+    border-radius: 10px;
+    border: solid 1px #90e0ef;
+    }
+    strong{
+    color: #90e0ef;
+    word-break: break-word;
+    font-size: medium;
+    
+    }
+    .r-link{
+    color: #caf0f8;
+    font-size: 1.0rem;
+    margin-left: 5%;
+    margin-top: 5%;
+    word-break: break-word;
+    }
+
+}
