@@ -9,6 +9,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    font-family:'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-attachment: fixed;
@@ -260,6 +261,7 @@ strong{
         margin: 0%;
         padding: 0%;
         background-attachment: fixed;
+        font-family:'Courier New', Courier, monospace;
     }
     .hero{
         font-family: 'TakeshiSword';
@@ -271,6 +273,12 @@ strong{
         font-size: 1.2em;
         word-break: break-all;
         margin: 0.5rem 0;
+    }
+      #text-show{
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        color: #90e0ef;
+        word-break: break-word;
     }
     .form-control{
         width: 90%;
@@ -411,3 +419,4 @@ strong{
     }
 
 }
+
