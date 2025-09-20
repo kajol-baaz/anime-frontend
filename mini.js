@@ -3,7 +3,6 @@ console.log("searchAnime() triggered");
 async function searchAnime() {
   const animeName = document.getElementById("animeinput").value;
 
-  // ✅ Use full backend URL to avoid local path issues
   const result = await fetch(`https://anime-backend-02wn.onrender.com/search?anime=${encodeURIComponent(animeName)}`);
   const data = await result.json();
   const anime = data.results[0];
@@ -13,7 +12,6 @@ async function searchAnime() {
     return;
   }
 
-  // ✨ Build anime info HTML
   document.getElementById("results").innerHTML = `
     <div class="js-div">
       <h2 class="js-heading">${anime.title}</h2>
@@ -30,7 +28,7 @@ async function searchAnime() {
     </div>
   `;
 
-  // 🧠 Get recommendations
+  // Get recommendations
   const animeId = anime.mal_id;
   const recRes = await fetch(`https://anime-backend-02wn.onrender.com/recommendations?animeId=${animeId}`);
   const recData = await recRes.json();
@@ -48,3 +46,26 @@ async function searchAnime() {
   recHTML += "</ul>";
   document.getElementById("results").innerHTML += recHTML;
 }
+if (typeof $ !== 'undefined' && document.getElementById('animeinput')) {
+  $(document).ready(function(){
+    $('#animeinput').on('keypress', function(e) {
+      if (e.key === 'Enter') {
+        searchAnime();
+        $("#text-show").show(5);
+      }
+    });
+    $('#searchbtn').on('click',function(){
+        $("#text-show").show(5);
+      })
+    $('.btn').on('click',function(){
+      $("html").animate({ 
+        scrollTop: $("body").offset().top
+      },300);
+    }); 
+  });
+} else {
+  console.error("jQuery is not loaded or #animeinput element is missing.");
+}
+
+
+
